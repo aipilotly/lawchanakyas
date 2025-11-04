@@ -1,0 +1,49 @@
+import type { Metadata } from "next";
+import { Playfair_Display, Inter } from "next/font/google";
+import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import ParticlesBackground from "@/components/ParticlesBackground";
+
+const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+
+export const metadata: Metadata = {
+  title: {
+    default: "LawChanakyas — Law. Order. Intelligence.",
+    template: "%s — LawChanakyas",
+  },
+  description:
+    "LawChanakyas: authoritative, elegant, and high‑tech legal platform for advocates, students, and the public.",
+  keywords: [
+    "LawChanakyas",
+    "law",
+    "advocates",
+    "legal tech",
+    "courtroom simulation",
+    "AI legal chatbot",
+  ],
+  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  metadataBase: new URL("https://lawchanakyas.example"),
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html lang="en" className="bg-black">
+      <body className={`${playfair.variable} ${inter.variable} font-sans text-white bg-black min-h-screen`}>
+        <ParticlesBackground />
+        <div className="relative flex min-h-screen flex-col">
+          <Navbar />
+          <main className="flex-1 bg-white text-black relative z-10 min-h-[60vh]">
+            <div className="mx-auto max-w-7xl px-6 py-10 md:px-10 md:py-14">
+              {children}
+            </div>
+          </main>
+          <Footer />
+        </div>
+      </body>
+    </html>
+  );
+}
