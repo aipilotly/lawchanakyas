@@ -1,99 +1,89 @@
 "use client";
 
-import { useCallback, useMemo } from "react";
+import { useMemo } from "react";
 import Particles from "@tsparticles/react";
-import type { Container, Engine } from "@tsparticles/engine";
-import { loadSlim } from "@tsparticles/slim";
+import type { ISourceOptions } from "@tsparticles/engine";
 
 export default function ParticlesBackground() {
-	const particlesInit = useCallback(async (engine: Engine) => {
-		await loadSlim(engine);
-	}, []);
-
-	const particlesLoaded = useCallback(async (container: Container | undefined) => {
-		// Particles loaded callback
-	}, []);
-
-	const options = useMemo(
+	const options: ISourceOptions = useMemo(
 		() => ({
 			fpsLimit: 120,
 			particles: {
-				number: { 
-					value: 80, 
-					density: { 
-						enable: true, 
-						value_area: 800 
-					} 
+				number: {
+					value: 80,
+					density: {
+						enable: true,
+						area: 800,
+					},
 				},
-				color: { 
-					value: "#000000" 
+				color: {
+					value: "#000000",
 				},
-				opacity: { 
+				opacity: {
 					value: 0.3,
 					random: true,
-					animation: { 
-						enable: true, 
-						speed: 0.5, 
-						sync: false 
-					}
+					animation: {
+						enable: true,
+						speed: 0.5,
+						sync: false,
+					},
 				},
-				size: { 
+				size: {
 					value: { min: 1, max: 3 },
 					random: true,
-					animation: { 
-						enable: true, 
-						speed: 2, 
-						sync: false 
-					}
+					animation: {
+						enable: true,
+						speed: 2,
+						sync: false,
+					},
 				},
-				links: { 
-					enable: true, 
-					color: "#000000", 
+				links: {
+					enable: true,
+					color: "#000000",
 					opacity: 0.2,
 					distance: 150,
-					width: 1
+					width: 1,
 				},
-				move: { 
-					enable: true, 
+				move: {
+					enable: true,
 					speed: 1,
 					direction: "none",
 					random: false,
 					straight: false,
-					outModes: { 
-						default: "bounce" 
+					outModes: {
+						default: "bounce",
 					},
 					bounce: false,
 					attract: {
 						enable: false,
 						rotateX: 600,
-						rotateY: 1200
-					}
-				}
+						rotateY: 1200,
+					},
+				},
 			},
 			interactivity: {
-				detectOn: "window",
-				events: { 
-					onHover: { 
-						enable: true, 
-						mode: "repulse" 
+				events: {
+					onHover: {
+						enable: true,
+						mode: "repulse",
 					},
-					onClick: { 
-						enable: true, 
-						mode: "push" 
+					onClick: {
+						enable: true,
+						mode: "push",
 					},
-					resize: true
+					resize: { enable: true },
 				},
-				modes: { 
-					repulse: { 
-						distance: 100, 
-						duration: 0.4 
+				modes: {
+					repulse: {
+						distance: 100,
+						duration: 0.4,
 					},
-					push: { 
-						quantity: 4 
-					}
-				}
+					push: {
+						quantity: 4,
+					},
+				},
 			},
-			detectRetina: true
+			detectRetina: true,
 		}),
 		[]
 	);
@@ -112,8 +102,6 @@ export default function ParticlesBackground() {
 		>
 			<Particles
 				id="tsparticles"
-				init={particlesInit}
-				loaded={particlesLoaded}
 				options={options}
 				className="w-full h-full"
 				style={{ width: '100%', height: '100%' }}
