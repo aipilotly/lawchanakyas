@@ -52,6 +52,8 @@ const publicMenu: MegaMenu = {
 		{ href: "/public/patent-filing", label: "Patent Filing Services" },
 		{ href: "/public/register-land-will-deed", label: "Register Land, Will or  Deed" },
 		{ href: "/public/case-studies", label: "Case Studies" },
+		{ href: "/public/investigation", label: "Investigation" },
+		{ href: "/public/client-case-dashboard", label: "Client/Case Dashboard" },
 	],
 };
 
@@ -62,16 +64,16 @@ export default function Navbar() {
 
 	return (
 		<div className="sticky top-0 z-50">
-			<header className="border-b border-white/10 bg-white/5 backdrop-blur supports-[backdrop-filter]:bg-white/5">
+			<header className="border-b border-black/10 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/90">
 				<div className="mx-auto max-w-7xl px-6">
-					<div className="flex h-16 items-center justify-between">
+					<div className="flex h-16 justify-between">
 						<Logo />
-						<nav className="hidden md:flex items-center gap-1">
-							<Link href="/about" className="px-3 py-2 rounded-md hover:bg-white/10 transition inline-flex items-center gap-2"><Landmark className="h-4 w-4" />About</Link>
+						<nav className="hidden md:flex items-center gap-1 text-black">
+							<Link href="/about" className="nav-link"><Landmark className="h-4 w-4" />About</Link>
 							{menus.map((m) => (
 								<div key={m.label} className="relative">
 									<button
-										className="px-3 py-2 rounded-md hover:bg-white/10 transition inline-flex items-center gap-2"
+										className="nav-link"
 										onMouseEnter={() => setOpen(m.label)}
 										onMouseLeave={() => setOpen((v) => (v === m.label ? null : v))}
 									>
@@ -86,16 +88,16 @@ export default function Navbar() {
 												animate={{ opacity: 1, y: 0 }}
 												exit={{ opacity: 0, y: 6 }}
 												transition={{ duration: 0.18 }}
-												className="absolute left-0 mt-2 min-w-[300px] rounded-xl border border-white/10 bg-black/80 p-3 backdrop-blur"
+												className="absolute left-0 mt-2 min-w-[300px] rounded-xl border border-black/10 bg-white p-3 shadow-xl"
 												onMouseEnter={() => setOpen(m.label)}
 												onMouseLeave={() => setOpen(null)}
 											>
 												<div className="grid grid-cols-1 gap-1">
 													{m.items.map((i) => (
-														<Link key={i.href} href={i.href} className="group px-3 py-2 rounded-md hover:bg-white/10 transition inline-flex items-center justify-between gap-6">
-															<span className="text-sm">{i.label}</span>
+														<Link key={i.href} href={i.href} className="group px-3 py-2 rounded-md hover:bg-black/5 transition inline-flex items-center justify-between gap-6">
+															<span className="text-sm text-black">{i.label}</span>
 															{i.highlight && (
-																<span className="text-[10px] uppercase tracking-wider rounded-full bg-white/15 text-white px-2 py-0.5 border border-white/20">Hot</span>
+																<span className="text-[10px] uppercase tracking-wider rounded-full bg-black/10 text-black px-2 py-0.5 border border-black/10">Hot</span>
 															)}
 														</Link>
 													))}
@@ -105,8 +107,8 @@ export default function Navbar() {
 									</AnimatePresence>
 								</div>
 							))}
-							<Link href="/blog" className="px-3 py-2 rounded-md hover:bg-white/10 transition inline-flex items-center gap-2"><Newspaper className="h-4 w-4" />Blog</Link>
-							<Link href="/contact" className="px-3 py-2 rounded-md hover:bg-white/10 transition inline-flex items-center gap-2"><Phone className="h-4 w-4" />Contact</Link>
+							<Link href="/blog" className="nav-link"><Newspaper className="h-4 w-4" />Blog</Link>
+							<Link href="/contact" className="nav-link"><Phone className="h-4 w-4" />Contact</Link>
 						</nav>
 					</div>
 				</div>

@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
+  --background: #ffffff;
+  --foreground: #111111;
 }
 
 @theme inline {
@@ -37,12 +37,35 @@ body {
   @apply px-6 py-10 md:px-10 md:py-14;
 }
 
-/* NEUTRAL CARDS that look good on white */
+/* NEUTRAL CARDS tuned for white */
 .premium-card {
-  @apply rounded-2xl border border-black/10 bg-black/5 p-6 shadow-[0_0_40px_-20px_rgba(0,0,0,0.2)];
+  @apply rounded-2xl border border-black/10 bg-white p-6 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.25)];
 }
 
-/* BUTTONS tuned for white panel */
+/* BUTTONS */
 .btn-primary {
   @apply inline-flex items-center gap-2 rounded-full border border-black/10 bg-black px-5 py-2 text-white transition hover:bg-black/80 hover:shadow-md;
 }
+
+/* Nav underline animation */
+.nav-link {
+  @apply relative inline-flex items-center gap-2 px-3 py-2 transition-colors;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 6px;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 200ms ease;
+  opacity: 0.6;
+}
+.nav-link:hover::after { transform: scaleX(1); }
+
+/* Hover lift utility for cards/links */
+.hover-lift { transition: transform 220ms ease, box-shadow 220ms ease; }
+.hover-lift:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -18px rgba(0,0,0,0.35); }
