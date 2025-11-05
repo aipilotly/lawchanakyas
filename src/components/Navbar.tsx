@@ -97,7 +97,7 @@ export default function Navbar() {
 														<Link key={i.href} href={i.href} className="group px-3 py-2 rounded-md hover:bg-black/5 transition inline-flex items-center justify-between gap-6">
 															<span className="text-sm text-black">{i.label}</span>
 															{i.highlight && (
-																<span className="text-[10px] uppercase tracking-wider rounded-full bg-black/10 text-black px-2 py-0.5 border border-black/10">Hot</span>
+																<span className="text-[10px] uppercase tracking-wider rounded-full bg-black text-white px-2 py-0.5 border border-black/20">Hot</span>
 															)}
 														</Link>
 													))}

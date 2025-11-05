@@ -69,7 +69,7 @@ export default function StudentsPage() {
                 <span>🔗 {service.cta}</span>
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
                 {service.hot && (
-                  <span className="ml-2 text-[10px] uppercase tracking-wider rounded-full bg-black/10 text-black px-2 py-0.5 border border-black/10">Hot</span>
+                  <span className="ml-2 text-[10px] uppercase tracking-wider rounded-full bg-black text-white px-2 py-0.5 border border-black/20">Hot</span>
                 )}
               </Link>
             </div>
