@@ -28,7 +28,7 @@ const services = [
     title: "Your Personal Legal Assistant — 24/7",
     description: "Ask any legal question and get instant, accurate, and context-based answers from our AI-powered legal chatbot, trained exclusively on Indian Bare Acts, case laws, and judicial precedents. Designed for advocates, students, and individuals — it ensures precise, reliable, and fast responses, without the complexity of legal jargon.",
     cta: "Chat with AI Legal Assistant",
-    href: "/advocates/ai-legal-chatbot",
+    href: "/ai-legal-chatbot",
     section: "🤖 AI-Based Legal Chatbot",
     hot: true
   },
@@ -37,7 +37,7 @@ const services = [
     title: "Step into the Courtroom of the Future",
     description: "Experience real-world legal drama through our Virtual Courtroom Simulation App. Re-create live proceedings, argue as a lawyer, object, cross-examine witnesses, and build courtroom confidence — all in an interactive, gamified environment. A powerful tool for law students, interns, and young advocates to practice and learn trial advocacy safely and immersively.",
     cta: "Explore Virtual Courtroom",
-    href: "/advocates/courtroom-simulation",
+    href: "/courtroom-simulation",
     section: "⚖️ Virtual Courtroom Simulation App",
     hot: true
   },

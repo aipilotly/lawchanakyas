@@ -18,7 +18,7 @@ const services = [
     title: "Step into the Courtroom — Learn by Arguing",
     description: "Experience real courtroom proceedings in an interactive simulation. Act as a lawyer, judge, or witness, present arguments, raise objections, and get feedback based on your performance. A next-generation learning tool for moot preparation, advocacy training, and trial practice — designed to build confidence before stepping into real courts.",
     cta: "Start Courtroom Simulation",
-    href: "/students/courtroom-simulation",
+    href: "/courtroom-simulation",
     section: "⚖️ Virtual Courtroom Simulation App",
     hot: true
   },

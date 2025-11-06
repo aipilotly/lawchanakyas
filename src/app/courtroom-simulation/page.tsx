@@ -24,10 +24,10 @@ export default function Page() {
 						No installation. Browser-based. Role-play as counsel, judge, or witness. Real-time objections, timed hearings, and AI judge feedback.
 					</p>
 					<div className="flex flex-wrap gap-4">
-						<Link href="/students/courtroom-simulation/demo" className="btn-primary">
+						<Link href="/courtroom-simulation/demo" className="btn-primary">
 							<Play className="h-4 w-4" /> Try a Free Demo
 						</Link>
-						<Link href="/students/courtroom-simulation/video" className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-black/10 bg-white text-black hover:bg-black/5 transition">
+						<Link href="/courtroom-simulation/video" className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-black/10 bg-white text-black hover:bg-black/5 transition">
 							Watch 90-sec Demo
 						</Link>
 					</div>

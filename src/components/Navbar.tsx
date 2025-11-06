@@ -20,12 +20,12 @@ const advocates: MegaMenu = {
 	icon: <Gavel className="h-4 w-4" />,
 	baseHref: "/advocates",
 	items: [
-		{ href: "/advocates/draft-bundles", label: "Draft bundles" },
+		{ href: "/courtroom-simulation", label: "Courtroom simulation app", highlight: true },
+		{ href: "/ai-legal-chatbot", label: "AI based legal chat bot", highlight: true },
 		{ href: "/advocates/directory", label: "Advocates Directory" },
-		{ href: "/advocates/ai-legal-chatbot", label: "AI based legal chat bot", highlight: true },
-		{ href: "/advocates/courtroom-simulation", label: "Courtroom simulation app", highlight: true },
-		{ href: "/advocates/networking-events", label: "Networking Events" },
+		{ href: "/advocates/draft-bundles", label: "Draft bundles" },
 		{ href: "/advocates/jobs", label: "Job Lisitngs" },
+		{ href: "/advocates/networking-events", label: "Networking Events" },
 	],
 };
 
@@ -34,8 +34,9 @@ const students: MegaMenu = {
 	icon: <GraduationCap className="h-4 w-4" />,
 	baseHref: "/students",
 	items: [
+		{ href: "/courtroom-simulation", label: "Courtroom simulation app", highlight: true },
+		{ href: "/ai-legal-chatbot", label: "AI based legal chat bot", highlight: true },
 		{ href: "/students/mindmaps", label: "Mindmap of bare acts", highlight: true },
-		{ href: "/students/courtroom-simulation", label: "Courtroom simulation app", highlight: true },
 		{ href: "/students/mootcourt", label: "Mootcourt Competitions" },
 		{ href: "/students/internships", label: "Internship Lisitngs" },
 		{ href: "/students/workshops", label: "Workshops / Courses" },
@@ -69,7 +70,6 @@ export default function Navbar() {
 					<div className="flex h-16 justify-between">
 						<Logo />
 						<nav className="hidden md:flex items-center gap-1 text-black">
-							<Link href="/about" className="nav-link"><Landmark className="h-4 w-4" />About</Link>
 							{menus.map((m) => (
 								<div key={m.label} className="relative">
 									<button
@@ -77,7 +77,6 @@ export default function Navbar() {
 										onMouseEnter={() => setOpen(m.label)}
 										onMouseLeave={() => setOpen((v) => (v === m.label ? null : v))}
 									>
-										{m.icon}
 										<span>{m.label}</span>
 										<ChevronDown className="h-4 w-4" />
 									</button>
@@ -107,8 +106,9 @@ export default function Navbar() {
 									</AnimatePresence>
 								</div>
 							))}
-							<Link href="/blog" className="nav-link"><Newspaper className="h-4 w-4" />Blog</Link>
-							<Link href="/contact" className="nav-link"><Phone className="h-4 w-4" />Contact</Link>
+							<Link href="/blog" className="nav-link">Blog</Link>
+							<Link href="/about" className="nav-link">About</Link>
+							<Link href="/contact" className="nav-link">Contact</Link>
 						</nav>
 					</div>
 				</div>

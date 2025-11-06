@@ -1,6 +1,6 @@
 import PageTransition from "@/components/PageTransition";
 import Link from "next/link";
-import { MessageSquare, Scale, FileText, Target, Shield, Zap, Gavel, GraduationCap, Users, CheckCircle, AlertCircle } from "lucide-react";
+import { MessageSquare, Scale, FileText, Target, Shield, Zap, Gavel, GraduationCap, Users, CheckCircle, AlertCircle, Play } from "lucide-react";
 
 export const metadata = { 
 	title: "AI Legal Chatbot — Indian Law Assistant | LawChanakyas",
@@ -21,10 +21,10 @@ export default function Page() {
 						Your 24/7 legal assistant — trained on Indian Bare Acts, judgements & precedents. A conversational AI trained exclusively on Indian Bare Acts, case laws, and judicial precedents. Fast, context-aware legal answers for advocates, students, and the public — like ChatGPT, but legally precise.
 					</p>
 					<div className="flex flex-wrap gap-4">
-						<Link href="/advocates/ai-legal-chatbot/chat" className="btn-primary">
+						<Link href="/ai-legal-chatbot/chat" className="btn-primary">
 							<MessageSquare className="h-4 w-4" /> Chat with the Legal Bot
 						</Link>
-						<Link href="/advocates/ai-legal-chatbot/demo" className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-black/10 bg-white text-black hover:bg-black/5 transition">
+						<Link href="/ai-legal-chatbot/demo" className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-black/10 bg-white text-black hover:bg-black/5 transition">
 							See Demo • API & Integration
 						</Link>
 					</div>
@@ -230,7 +230,7 @@ export default function Page() {
 							Start a free trial and see how the AI Legal Chatbot can speed up research, sharpen arguments, and simplify drafting.
 						</p>
 						<div className="flex flex-wrap gap-4 justify-center">
-							<Link href="/advocates/ai-legal-chatbot/signup" className="btn-primary">
+							<Link href="/ai-legal-chatbot/signup" className="btn-primary">
 								Start Free Trial
 							</Link>
 							<Link href="/contact#enterprise-demo" className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-black/10 bg-white text-black hover:bg-black/5 transition">
