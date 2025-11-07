@@ -21,7 +21,7 @@ export default function HomeParticles() {
 			detectRetina: true,
 			particles: {
 				number: {
-					value: 180,
+					value: 120,
 					density: {
 						enable: true,
 						area: 800,
@@ -58,7 +58,7 @@ export default function HomeParticles() {
 					},
 				},
 				size: {
-					value: 6,
+					value: 12,
 					random: { enable: true, minimumValue: 0.1 },
 					animation: {
 						enable: false,

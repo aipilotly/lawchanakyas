@@ -49,19 +49,19 @@ export default function Home() {
         <div className="relative z-10 w-full">
           <div className="grid items-center gap-10 md:grid-cols-2">
             <motion.div {...fadeUp}>
-              <div className="space-y-6">
+              <div className="space-y-6 py-4">
                 <div className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-white/80 backdrop-blur-sm px-3 py-1 text-xs uppercase tracking-wider text-black/80">
                   <Scale className="h-3.5 w-3.5" /> Courtroom • Law • Justice
                 </div>
                 <h1 className="h1 text-black">Smart Law. Simplified Justice.</h1>
-                <p className="text-lg text-black/70 max-w-prose">
+                {/* <p className="text-lg text-black/70 max-w-prose">
                   A one-stop digital ecosystem for every legal need — from AI-powered legal queries to virtual courtroom learning and verified legal services.
                 </p>
-                <div className="text-sm tracking-wide uppercase text-black/60">⚖️ "Explore Your Legal World with LawChanakyas"</div>
+                <div className="text-sm tracking-wide uppercase text-black/60">⚖️ "Explore Your Legal World with LawChanakyas"</div> */}
                 <div className="flex flex-wrap gap-3 pt-1">
-                  <Link href="/advocates" className="btn-primary hover-lift"><Gavel className="h-4 w-4" /> For Advocates</Link>
-                  <Link href="/students" className="btn-primary hover-lift"><GraduationCap className="h-4 w-4" /> For Students</Link>
-                  <Link href="/public" className="btn-primary hover-lift"><Users2 className="h-4 w-4" /> For Public</Link>
+                  <Link href="#" className="btn-primary hover-lift"><Gavel className="h-4 w-4" /> For Advocates</Link>
+                  <Link href="#" className="btn-primary hover-lift"><GraduationCap className="h-4 w-4" /> For Students</Link>
+                  <Link href="#" className="btn-primary hover-lift"><Users2 className="h-4 w-4" /> For Public</Link>
                 </div>
               </div>
             </motion.div>
@@ -70,7 +70,7 @@ export default function Home() {
       </FullBleedLayout>
 
       {/* Why LawChanakyas? */}
-      <FullBleedLayout innerClassName="relative overflow-hidden bg-white px-6 py-10 md:px-10">
+      {/* <FullBleedLayout innerClassName="relative overflow-hidden bg-white px-6 py-10 md:px-10">
         <h2 className="h2 mb-6 text-black">Why LawChanakyas?</h2>
         <div className="grid gap-4 md:grid-cols-3">
           {["Bridging the gap between law and technology","Empowering advocates, students, and citizens","Redefining how India learns, practices, and accesses law"].map((title, idx) => (
@@ -80,10 +80,10 @@ export default function Home() {
             </motion.div>
           ))}
         </div>
-      </FullBleedLayout>
+      </FullBleedLayout> */}
 
       {/* Quick Links */}
-      <FullBleedLayout innerClassName="relative overflow-hidden bg-white px-6 py-10 md:px-10">
+      {/* <FullBleedLayout innerClassName="relative overflow-hidden bg-white px-6 py-10 md:px-10">
         <h2 className="h2 mb-6 text-black">Quick Links:</h2>
         <div className="grid gap-4 md:grid-cols-3">
           <motion.div {...fadeUp} className="hover-lift">
@@ -111,10 +111,10 @@ export default function Home() {
             </Link>
           </motion.div>
         </div>
-      </FullBleedLayout>
+      </FullBleedLayout> */}
 
       {/* Stats / Highlights */}
-      <FullBleedLayout innerClassName="relative overflow-hidden bg-white px-6 pb-12 md:px-10">
+      {/* <FullBleedLayout innerClassName="relative overflow-hidden bg-white px-6 pb-12 md:px-10">
         <div className="grid gap-4 md:grid-cols-3">
           {["3 Core Platforms","25+ Legal Draft Templates","AI trained on 10,000+ Case Laws"].map((t, i) => (
             <motion.div key={t} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.05 * i }} className="rounded-xl border border-black/10 bg-white p-5 text-center hover-lift">
@@ -122,7 +122,7 @@ export default function Home() {
             </motion.div>
           ))}
         </div>
-      </FullBleedLayout>
+      </FullBleedLayout> */}
     </PageTransition>
   );
 }

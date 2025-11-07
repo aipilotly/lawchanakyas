@@ -69,7 +69,7 @@ export default function Navbar() {
 				<div className="mx-auto max-w-7xl px-6">
 					<div className="flex h-16 justify-between">
 						<Logo />
-						<nav className="hidden md:flex items-center gap-1 text-black">
+						{/* <nav className="hidden md:flex items-center gap-1 text-black">
 							{menus.map((m) => (
 								<div key={m.label} className="relative">
 									<button
@@ -109,7 +109,7 @@ export default function Navbar() {
 							<Link href="/blog" className="nav-link">Blog</Link>
 							<Link href="/about" className="nav-link">About</Link>
 							<Link href="/contact" className="nav-link">Contact</Link>
-						</nav>
+						</nav> */}
 					</div>
 				</div>
 			</header>
