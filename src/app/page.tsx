@@ -26,6 +26,7 @@ export default function Home() {
         {/* Particles Background */}
         <HomeParticles />
 
+        <div className="mx-auto max-w-7xl px-6 py-10 md:px-10 md:py-14">
         {/* Hero Image - Right Side */}
         <div className="absolute right-0 top-0 h-full w-full md:w-1/2 flex items-start justify-end pr-6 pt-10 z-20">
           <motion.div
@@ -53,7 +54,7 @@ export default function Home() {
                 <div className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-white/80 backdrop-blur-sm px-3 py-1 text-xs uppercase tracking-wider text-black/80">
                   <Scale className="h-3.5 w-3.5" /> Courtroom • Law • Justice
                 </div>
-                <h1 className="h1 text-black">Smart Law. Simplified Justice.</h1>
+                <h1 className="h1 text-black">We’re Coding Justice. Stay Tuned.</h1>
                 {/* <p className="text-lg text-black/70 max-w-prose">
                   A one-stop digital ecosystem for every legal need — from AI-powered legal queries to virtual courtroom learning and verified legal services.
                 </p>
@@ -66,6 +67,7 @@ export default function Home() {
               </div>
             </motion.div>
           </div>
+        </div>
         </div>
       </FullBleedLayout>
 
