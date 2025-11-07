@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import Image from "next/image";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import type { ISourceOptions } from "@tsparticles/engine";
@@ -27,13 +28,27 @@ export default function HomeParticles() {
 					},
 				},
 				color: { value: "#000000" },
+				// shape: {
+				// 	type: "circle",
+				// 	stroke: { width: 0, color: "#000000" },
+				// 	polygon: { sides: 5 },
+				// },
 				shape: {
-					type: "circle",
-					stroke: { width: 0, color: "#000000" },
-					polygon: { sides: 5 },
+					type: "image",
+                    options: {
+                        image: {
+                          src: "/assets/person.png", // URL of your icon
+                          width: 32, // Optional: width of the image
+                          height: 32, // Optional: height of the image
+                        },
+                        // You can also provide an array of images for variety
+                        // image: [ { src: 'icon1.png', ... }, { src: 'icon2.png', ... } ]
+                      },
+					// stroke: { width: 0, color: "#000000" },
+					// polygon: { sides: 5 },
 				},
 				opacity: {
-					value: 0.5,
+					value: 0.8,
 					random: false,
 					animation: {
 						enable: false,
@@ -43,7 +58,7 @@ export default function HomeParticles() {
 					},
 				},
 				size: {
-					value: 2,
+					value: 6,
 					random: { enable: true, minimumValue: 0.1 },
 					animation: {
 						enable: false,
@@ -105,8 +120,21 @@ export default function HomeParticles() {
 	if (!isReady) return null;
 
 	return (
-		<div className="absolute inset-0 h-full w-full pointer-events-none">
+		<div className="absolute inset-0 h-full w-full pointer-events-none z-0 overflow-hidden">
 			<Particles id="home-particles" options={options} className="h-full w-full" />
+			{/* <div
+				className="pointer-events-none select-none absolute top-0 right-0 flex justify-end"
+				aria-hidden
+			>
+				<Image
+					src="/assets/full-silhouette.png"
+					alt=""
+					width={320}
+					height={640}
+					className="object-contain opacity-80"
+					priority
+				/>
+			</div> */}
 		</div>
 	);
 }

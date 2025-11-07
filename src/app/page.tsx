@@ -5,6 +5,7 @@ import PageTransition from "@/components/PageTransition";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import HomeParticles from "@/components/HomeParticles";
+import Image from "next/image";
 
 const fadeUp = {
   initial: { opacity: 0, y: 16 },
@@ -17,13 +18,33 @@ export default function Home() {
   return (
     <PageTransition>
       {/* Hero Section with Particles */}
-      <section className="relative overflow-hidden min-h-[80vh] flex items-center">
+      <section
+        className="relative overflow-hidden min-h-[80vh] flex items-center"
+      >
         {/* Particles Background */}
-
         <HomeParticles />
         
+        {/* Hero Image - Right Side */}
+        <div className="absolute right-0 top-0 h-full w-full md:w-1/2 flex items-start justify-end pr-6 pt-10 z-20">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="relative h-[60vh] w-auto"
+          >
+            {/* <Image
+              src="/assets/half1.png"
+              alt="Legal Professional"
+              width={400}
+              height={600}
+              className="object-contain h-full w-auto"
+              priority
+            /> */}
+          </motion.div>
+        </div>
+        
         {/* Content with proper z-index */}
-        {/* <div className="relative z-10 mx-auto max-w-7xl px-6 pt-14 pb-10 w-full">
+        <div className="relative z-10 w-full px-6 pt-14 pb-10">
           <div className="grid items-center gap-10 md:grid-cols-2">
             <motion.div {...fadeUp}>
               <div className="space-y-6">
@@ -42,19 +63,13 @@ export default function Home() {
                 </div>
               </div>
             </motion.div>
-            <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
-              <div className="rounded-2xl border border-black/10 bg-white/80 backdrop-blur-sm p-8 text-black/60">
-                <div className="aspect-[4/3] w-full rounded-xl border border-black/10 bg-white/60" />
-                <div className="mt-4 text-sm">Preview: Platform overview or hero graphic</div>
-              </div>
-            </motion.div>
           </div>
-        </div> */}
+        </div>
       </section>
 
       {/* Why LawChanakyas? */}
       <section className="relative overflow-hidden bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-10">
+        <div className="w-full px-6 py-10">
           <h2 className="h2 mb-6 text-black">Why LawChanakyas?</h2>
           <div className="grid gap-4 md:grid-cols-3">
             {["Bridging the gap between law and technology","Empowering advocates, students, and citizens","Redefining how India learns, practices, and accesses law"].map((title, idx) => (
@@ -68,8 +83,8 @@ export default function Home() {
       </section>
 
       {/* Quick Links */}
-      {/* <section className="relative overflow-hidden bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-10">
+      <section className="relative overflow-hidden bg-white">
+        <div className="w-full px-6 py-10">
           <h2 className="h2 mb-6 text-black">Quick Links:</h2>
           <div className="grid gap-4 md:grid-cols-3">
             <motion.div {...fadeUp} className="hover-lift">
@@ -98,11 +113,11 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Stats / Highlights */}
-      {/* <section className="relative overflow-hidden bg-white">
-        <div className="mx-auto max-w-7xl px-6 pb-12">
+      <section className="relative overflow-hidden bg-white">
+        <div className="w-full px-6 pb-12">
           <div className="grid gap-4 md:grid-cols-3">
             {["3 Core Platforms","25+ Legal Draft Templates","AI trained on 10,000+ Case Laws"].map((t, i) => (
               <motion.div key={t} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.05 * i }} className="rounded-xl border border-black/10 bg-white p-5 text-center hover-lift">
@@ -111,7 +126,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section> */}
+      </section>
     </PageTransition>
   );
 }

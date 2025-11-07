@@ -3,16 +3,15 @@ import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-// import ParticlesBackground from "@/components/ParticlesBackground";
 
-const playfair = Playfair_Display({ 
-  subsets: ["latin"], 
+const playfair = Playfair_Display({
+  subsets: ["latin"],
   variable: "--font-serif",
   display: "swap",
 });
 
-const inter = Inter({ 
-  subsets: ["latin"], 
+const inter = Inter({
+  subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
 });
@@ -41,11 +40,12 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="bg-black">
-      <body className={`${playfair.variable} ${inter.variable} font-sans text-white bg-black min-h-screen`}>
-        {/* <ParticlesBackground /> */}
+      <body
+        className={`${playfair.variable} ${inter.variable} font-sans text-white bg-black min-h-screen`}
+      >
         <div className="relative flex min-h-screen flex-col">
           <Navbar />
-          <main className="flex-1 bg-white text-black relative z-10 min-h-[60vh]">
+          <main className="flex-1 bg-white text-black relative z-10 min-h-[60vh]" >
             <div className="mx-auto max-w-7xl px-6 py-10 md:px-10 md:py-14">
               {children}
             </div>
