@@ -122,19 +122,19 @@ export default function HomeParticles() {
 	return (
 		<div className="absolute inset-0 h-full w-full pointer-events-none z-0 overflow-hidden">
 			<Particles id="home-particles" options={options} className="h-full w-full" />
-			{/* <div
+			<div
 				className="pointer-events-none select-none absolute top-0 right-0 flex justify-end"
 				aria-hidden
 			>
 				<Image
-					src="/assets/full-silhouette.png"
+					src="/assets/bg-2.png"
 					alt=""
 					width={320}
 					height={640}
-					className="object-contain opacity-80"
+					className="object-contain opacity-100"
 					priority
 				/>
-			</div> */}
+			</div>
 		</div>
 	);
 }

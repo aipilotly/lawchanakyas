@@ -5,6 +5,7 @@ import PageTransition from "@/components/PageTransition";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import HomeParticles from "@/components/HomeParticles";
+import FullBleedLayout from "@/components/layouts/FullBleedLayout";
 import Image from "next/image";
 
 const fadeUp = {
@@ -18,12 +19,13 @@ export default function Home() {
   return (
     <PageTransition>
       {/* Hero Section with Particles */}
-      <section
-        className="relative overflow-hidden min-h-[80vh] flex items-center"
+      <FullBleedLayout
+        // style={{ background: "url('/assets/bg.png') no-repeat top right", backgroundSize: "24%" }}
+        // innerClassName="relative overflow-hidden min-h-[80vh] flex items-center px-6 pt-14 pb-10 md:px-10"
       >
         {/* Particles Background */}
         <HomeParticles />
-        
+
         {/* Hero Image - Right Side */}
         <div className="absolute right-0 top-0 h-full w-full md:w-1/2 flex items-start justify-end pr-6 pt-10 z-20">
           <motion.div
@@ -42,9 +44,9 @@ export default function Home() {
             /> */}
           </motion.div>
         </div>
-        
+
         {/* Content with proper z-index */}
-        <div className="relative z-10 w-full px-6 pt-14 pb-10">
+        <div className="relative z-10 w-full">
           <div className="grid items-center gap-10 md:grid-cols-2">
             <motion.div {...fadeUp}>
               <div className="space-y-6">
@@ -65,68 +67,62 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </FullBleedLayout>
 
       {/* Why LawChanakyas? */}
-      <section className="relative overflow-hidden bg-white">
-        <div className="w-full px-6 py-10">
-          <h2 className="h2 mb-6 text-black">Why LawChanakyas?</h2>
-          <div className="grid gap-4 md:grid-cols-3">
-            {["Bridging the gap between law and technology","Empowering advocates, students, and citizens","Redefining how India learns, practices, and accesses law"].map((title, idx) => (
-              <motion.div key={title} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.05 * idx }} className="premium-card text-black hover-lift">
-                <div className="font-semibold mb-1">{title}</div>
-                <p className="text-black/70">&nbsp;</p>
-              </motion.div>
-            ))}
-          </div>
+      <FullBleedLayout innerClassName="relative overflow-hidden bg-white px-6 py-10 md:px-10">
+        <h2 className="h2 mb-6 text-black">Why LawChanakyas?</h2>
+        <div className="grid gap-4 md:grid-cols-3">
+          {["Bridging the gap between law and technology","Empowering advocates, students, and citizens","Redefining how India learns, practices, and accesses law"].map((title, idx) => (
+            <motion.div key={title} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.05 * idx }} className="premium-card text-black hover-lift">
+              <div className="font-semibold mb-1">{title}</div>
+              <p className="text-black/70">&nbsp;</p>
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </FullBleedLayout>
 
       {/* Quick Links */}
-      <section className="relative overflow-hidden bg-white">
-        <div className="w-full px-6 py-10">
-          <h2 className="h2 mb-6 text-black">Quick Links:</h2>
-          <div className="grid gap-4 md:grid-cols-3">
-            <motion.div {...fadeUp} className="hover-lift">
-              <Link href="/advocates" className="premium-card text-black">
-                <div className="flex items-center gap-3">
-                  <div className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-black text-white"><Gavel className="h-4 w-4" /></div>
-                  <div className="font-medium">🧑‍⚖️ Practice Smarter (Advocates)</div>
-                </div>
-              </Link>
-            </motion.div>
-            <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.05 }} className="hover-lift">
-              <Link href="/students" className="premium-card text-black">
-                <div className="flex items-center gap-3">
-                  <div className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-black text-white"><GraduationCap className="h-4 w-4" /></div>
-                  <div className="font-medium">🎓 Learn Practically (Students)</div>
-                </div>
-              </Link>
-            </motion.div>
-            <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }} className="hover-lift">
-              <Link href="/public" className="premium-card text-black">
-                <div className="flex items-center gap-3">
-                  <div className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-black text-white"><Users2 className="h-4 w-4" /></div>
-                  <div className="font-medium">🧍 Get Legal Help (Public)</div>
-                </div>
-              </Link>
-            </motion.div>
-          </div>
+      <FullBleedLayout innerClassName="relative overflow-hidden bg-white px-6 py-10 md:px-10">
+        <h2 className="h2 mb-6 text-black">Quick Links:</h2>
+        <div className="grid gap-4 md:grid-cols-3">
+          <motion.div {...fadeUp} className="hover-lift">
+            <Link href="/advocates" className="premium-card text-black">
+              <div className="flex items-center gap-3">
+                <div className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-black text-white"><Gavel className="h-4 w-4" /></div>
+                <div className="font-medium">🧑‍⚖️ Practice Smarter (Advocates)</div>
+              </div>
+            </Link>
+          </motion.div>
+          <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.05 }} className="hover-lift">
+            <Link href="/students" className="premium-card text-black">
+              <div className="flex items-center gap-3">
+                <div className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-black text-white"><GraduationCap className="h-4 w-4" /></div>
+                <div className="font-medium">🎓 Learn Practically (Students)</div>
+              </div>
+            </Link>
+          </motion.div>
+          <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }} className="hover-lift">
+            <Link href="/public" className="premium-card text-black">
+              <div className="flex items-center gap-3">
+                <div className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-black text-white"><Users2 className="h-4 w-4" /></div>
+                <div className="font-medium">🧍 Get Legal Help (Public)</div>
+              </div>
+            </Link>
+          </motion.div>
         </div>
-      </section>
+      </FullBleedLayout>
 
       {/* Stats / Highlights */}
-      <section className="relative overflow-hidden bg-white">
-        <div className="w-full px-6 pb-12">
-          <div className="grid gap-4 md:grid-cols-3">
-            {["3 Core Platforms","25+ Legal Draft Templates","AI trained on 10,000+ Case Laws"].map((t, i) => (
-              <motion.div key={t} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.05 * i }} className="rounded-xl border border-black/10 bg-white p-5 text-center hover-lift">
-                <div className="text-2xl font-semibold text-black">{t}</div>
-              </motion.div>
-            ))}
-          </div>
+      <FullBleedLayout innerClassName="relative overflow-hidden bg-white px-6 pb-12 md:px-10">
+        <div className="grid gap-4 md:grid-cols-3">
+          {["3 Core Platforms","25+ Legal Draft Templates","AI trained on 10,000+ Case Laws"].map((t, i) => (
+            <motion.div key={t} {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.05 * i }} className="rounded-xl border border-black/10 bg-white p-5 text-center hover-lift">
+              <div className="text-2xl font-semibold text-black">{t}</div>
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </FullBleedLayout>
     </PageTransition>
   );
 }

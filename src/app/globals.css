@@ -69,3 +69,17 @@ body {
 /* Hover lift utility for cards/links */
 .hover-lift { transition: transform 220ms ease, box-shadow 220ms ease; }
 .hover-lift:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -18px rgba(0,0,0,0.35); }
+
+/* Full-bleed layout helper */
+.full-bleed-layout {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.full-bleed-layout__inner {
+  width: 100%;
+}
