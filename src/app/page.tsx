@@ -4,6 +4,7 @@ import { Gavel, GraduationCap, Users2, Scale } from "lucide-react";
 import PageTransition from "@/components/PageTransition";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import HomeParticles from "@/components/HomeParticles";
 
 const fadeUp = {
   initial: { opacity: 0, y: 16 },
@@ -15,20 +16,25 @@ const fadeUp = {
 export default function Home() {
   return (
     <PageTransition>
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="mx-auto max-w-7xl px-6 pt-14 pb-10">
+      {/* Hero Section with Particles */}
+      <section className="relative overflow-hidden min-h-[80vh] flex items-center">
+        {/* Particles Background */}
+
+        <HomeParticles />
+        
+        {/* Content with proper z-index */}
+        {/* <div className="relative z-10 mx-auto max-w-7xl px-6 pt-14 pb-10 w-full">
           <div className="grid items-center gap-10 md:grid-cols-2">
             <motion.div {...fadeUp}>
               <div className="space-y-6">
-                <div className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-black/10 px-3 py-1 text-xs uppercase tracking-wider text-black/80">
+                <div className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-white/80 backdrop-blur-sm px-3 py-1 text-xs uppercase tracking-wider text-black/80">
                   <Scale className="h-3.5 w-3.5" /> Courtroom • Law • Justice
                 </div>
                 <h1 className="h1 text-black">Smart Law. Simplified Justice.</h1>
                 <p className="text-lg text-black/70 max-w-prose">
                   A one-stop digital ecosystem for every legal need — from AI-powered legal queries to virtual courtroom learning and verified legal services.
                 </p>
-                <div className="text-sm tracking-wide uppercase text-black/60">⚖️ “Explore Your Legal World with LawChanakyas”</div>
+                <div className="text-sm tracking-wide uppercase text-black/60">⚖️ "Explore Your Legal World with LawChanakyas"</div>
                 <div className="flex flex-wrap gap-3 pt-1">
                   <Link href="/advocates" className="btn-primary hover-lift"><Gavel className="h-4 w-4" /> For Advocates</Link>
                   <Link href="/students" className="btn-primary hover-lift"><GraduationCap className="h-4 w-4" /> For Students</Link>
@@ -37,17 +43,17 @@ export default function Home() {
               </div>
             </motion.div>
             <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.1 }}>
-              <div className="rounded-2xl border border-black/10 bg-black/5 p-8 text-black/60">
+              <div className="rounded-2xl border border-black/10 bg-white/80 backdrop-blur-sm p-8 text-black/60">
                 <div className="aspect-[4/3] w-full rounded-xl border border-black/10 bg-white/60" />
                 <div className="mt-4 text-sm">Preview: Platform overview or hero graphic</div>
               </div>
             </motion.div>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* Why LawChanakyas? */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden bg-white">
         <div className="mx-auto max-w-7xl px-6 py-10">
           <h2 className="h2 mb-6 text-black">Why LawChanakyas?</h2>
           <div className="grid gap-4 md:grid-cols-3">
@@ -62,7 +68,7 @@ export default function Home() {
       </section>
 
       {/* Quick Links */}
-      <section className="relative overflow-hidden">
+      {/* <section className="relative overflow-hidden bg-white">
         <div className="mx-auto max-w-7xl px-6 py-10">
           <h2 className="h2 mb-6 text-black">Quick Links:</h2>
           <div className="grid gap-4 md:grid-cols-3">
@@ -92,10 +98,10 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Stats / Highlights */}
-      <section className="relative overflow-hidden">
+      {/* <section className="relative overflow-hidden bg-white">
         <div className="mx-auto max-w-7xl px-6 pb-12">
           <div className="grid gap-4 md:grid-cols-3">
             {["3 Core Platforms","25+ Legal Draft Templates","AI trained on 10,000+ Case Laws"].map((t, i) => (
@@ -105,7 +111,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </PageTransition>
   );
 }
