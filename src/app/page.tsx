@@ -48,17 +48,17 @@ export default function Home() {
 
         {/* Content with proper z-index */}
         <div className="relative z-10 w-full">
-          <div className="grid items-center gap-10 md:grid-cols-2">
+          <div className="grid items-center gap-10 md:grid-cols-2 bg-white">
             <motion.div {...fadeUp}>
               <div className="space-y-6 py-4">
                 <div className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-white/80 backdrop-blur-sm px-3 py-1 text-xs uppercase tracking-wider text-black/80">
                   <Scale className="h-3.5 w-3.5" /> Courtroom • Law • Justice
                 </div>
-                <h1 className="h1 text-black">We’re Coding Justice. Stay Tuned.</h1>
+                <h1 className="h1 text-black">Where Law Meets Technology. Launching Shortly.</h1>
                 {/* <p className="text-lg text-black/70 max-w-prose">
                   A one-stop digital ecosystem for every legal need — from AI-powered legal queries to virtual courtroom learning and verified legal services.
-                </p>
-                <div className="text-sm tracking-wide uppercase text-black/60">⚖️ "Explore Your Legal World with LawChanakyas"</div> */}
+                </p>*/}
+                <div className="text-sm tracking-wide uppercase text-black/60">⚖️ LawChanakyas - Turning legal complexity into clarity</div> 
                 <div className="flex flex-wrap gap-3 pt-1">
                   <Link href="#" className="btn-primary hover-lift"><Gavel className="h-4 w-4" /> For Advocates</Link>
                   <Link href="#" className="btn-primary hover-lift"><GraduationCap className="h-4 w-4" /> For Students</Link>
