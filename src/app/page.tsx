@@ -48,9 +48,9 @@ export default function Home() {
 
         {/* Content with proper z-index */}
         <div className="relative z-10 w-full">
-          <div className="grid items-center gap-10 md:grid-cols-2 bg-white">
+          <div className="grid items-center gap-10 md:grid-cols-2">
             <motion.div {...fadeUp}>
-              <div className="space-y-6 py-4">
+              <div className="space-y-6 py-4 bg-white">
                 <div className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-white/80 backdrop-blur-sm px-3 py-1 text-xs uppercase tracking-wider text-black/80">
                   <Scale className="h-3.5 w-3.5" /> Courtroom • Law • Justice
                 </div>
