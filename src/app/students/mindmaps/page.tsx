@@ -53,7 +53,6 @@ export default function Page() {
 		<PageTransition>
 			<div className="mx-auto max-w-5xl px-6 py-16">
 				<div className="mb-4 inline-flex items-center gap-2 rounded-full border border-black/20 bg-black px-3 py-1 text-[10px] uppercase tracking-wider text-white shadow-[0_8px_20px_rgba(0,0,0,0.2)]">
-					<span className="h-1.5 w-1.5 rounded-full bg-white" />
 					Hot
 				</div>
 				<h1 className="h1 mb-6 text-black">Mindmap of bare acts</h1>
@@ -61,36 +60,66 @@ export default function Page() {
 					Dive into crisp, high-impact mindmaps crafted to make complex bare acts intuitive. Explore each collection to review, revise, or teach with ease.
 				</p>
 
-				<ul className="grid gap-6 md:grid-cols-2">
-					{mindmaps.map((mindmap) => (
+				<ul className="grid gap-6 md:grid-cols-3">
+					{mindmaps.map((mindmap, index) => {
+						const isDark = index % 2 === 0;
+
+						return (
 						<li key={mindmap.href}>
 							<Link
 								href={mindmap.href}
-								className="group relative block overflow-hidden rounded-2xl border border-black/10 bg-white text-black shadow-[0_25px_60px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-black hover:bg-black hover:text-white"
+								className={`group relative block overflow-hidden rounded-2xl border shadow-[0_25px_60px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-1 ${
+									isDark
+										? "border-white/10 bg-black text-white hover:border-black/30 hover:bg-white hover:text-black"
+										: "border-black/10 bg-white text-black hover:border-black hover:bg-black hover:text-white"
+								}`}
 							>
-								<div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+								<div
+									className={`absolute inset-0 bg-gradient-to-br opacity-0 transition-opacity duration-300 group-hover:opacity-100 ${
+										isDark ? "from-transparent via-transparent to-white/15" : "from-transparent via-transparent to-black/10"
+									}`}
+								/>
 								<div className="relative flex h-full flex-col gap-4 p-6">
 									<div className="flex items-center justify-between">
-										<div className="text-[11px] uppercase tracking-[0.2em] text-black/60 transition-colors group-hover:text-white/70">
+										<div
+											className={`text-[11px] uppercase tracking-[0.2em] transition-colors ${
+												isDark ? "text-white/70 group-hover:text-black/60" : "text-black/60 group-hover:text-white/70"
+											}`}
+										>
 											Core mindmap
 										</div>
-										<span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-black/10 bg-black text-white transition group-hover:border-white/20 group-hover:bg-white group-hover:text-black">
+										<span
+											className={`inline-flex h-9 w-9 items-center justify-center rounded-full border transition ${
+												isDark
+													? "border-white/30 bg-white text-black group-hover:border-black/20 group-hover:bg-black group-hover:text-white"
+													: "border-black/10 bg-black text-white group-hover:border-white/20 group-hover:bg-white group-hover:text-black"
+											}`}
+										>
 											<ArrowUpRight className="h-4 w-4" />
 										</span>
 									</div>
 									<div>
 										<h2 className="text-xl font-semibold tracking-tight">{mindmap.title}</h2>
-										<p className="mt-3 text-sm leading-relaxed text-black/70 transition-colors group-hover:text-white/80">
+										<p
+											className={`mt-3 text-sm leading-relaxed transition-colors ${
+												isDark ? "text-white/80 group-hover:text-black/70" : "text-black/70 group-hover:text-white/80"
+											}`}
+										>
 											{mindmap.description}
 										</p>
 									</div>
-									<div className="mt-auto text-sm font-medium uppercase tracking-widest text-black transition-colors group-hover:text-white">
+									<div
+										className={`mt-auto text-sm font-medium uppercase tracking-widest transition-colors ${
+											isDark ? "text-white group-hover:text-black" : "text-black group-hover:text-white"
+										}`}
+									>
 										Explore mindmap
 									</div>
 								</div>
 							</Link>
 						</li>
-					))}
+						);
+					})}
 				</ul>
 			</div>
 		</PageTransition>
