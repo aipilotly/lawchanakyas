@@ -48,13 +48,9 @@ const publicMenu: MegaMenu = {
 	icon: <Users2 className="h-4 w-4" />,
 	baseHref: "/public",
 	items: [
+		{ href: "/public/client-case-dashboard", label: "Client/Case Dashboard", highlight: true },
 		{ href: "/public/legal-consultation", label: "Legal Consultation Services" },
-		{ href: "/public/testimonials", label: "Testimonials" },
-		{ href: "/public/patent-filing", label: "Patent Filing Services" },
-		{ href: "/public/register-land-will-deed", label: "Register Land, Will or  Deed" },
 		{ href: "/public/case-studies", label: "Case Studies" },
-		{ href: "/public/investigation", label: "Investigation" },
-		{ href: "/public/client-case-dashboard", label: "Client/Case Dashboard" },
 	],
 };
 
@@ -69,7 +65,7 @@ export default function Navbar() {
 				<div className="mx-auto max-w-7xl px-6">
 					<div className="flex h-16 justify-between">
 						<Logo />
-						{/* <nav className="hidden md:flex items-center gap-1 text-black">
+						<nav className="hidden md:flex items-center gap-1 text-black">
 							{menus.map((m) => (
 								<div key={m.label} className="relative">
 									<button
@@ -109,7 +105,7 @@ export default function Navbar() {
 							<Link href="/blog" className="nav-link">Blog</Link>
 							<Link href="/about" className="nav-link">About</Link>
 							<Link href="/contact" className="nav-link">Contact</Link>
-						</nav> */}
+						</nav>
 					</div>
 				</div>
 			</header>
